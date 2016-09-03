@@ -1,0 +1,11 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: R
+sudo: false
+cache: packages
+repos:
+  CRAN: https://mran.revolutionanalytics.com/snapshot/2016-09-02
+env:
+  global:
+  - R_LIBS_USER=~/vignettes/packages/.checkpoint/2016-09-02/lib/x86_64-w64-mingw32/3.3.1
+  - R_LIBS_SITE=~/vignettes/packages/.checkpoint/2016-09-02/lib/x86_64-w64-mingw32/3.3.1
