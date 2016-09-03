@@ -15,11 +15,7 @@
       ]
     }
   },
-  "cache": {
-    "directories": "$R_LIBS_USER"
-  },
   "before_script": [
-    "mkdir -p \"$R_LIBS_USER\"",
     "git config --global user.email \"benmarwick@gmail.com\"",
     "git config --global user.name \"benmarwick\"",
     "wget -q -O - https://github.com/yihui/crandalf/raw/master/inst/scripts/install-pandoc | bash",
