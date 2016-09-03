@@ -6,4 +6,3 @@ cache: packages
 warnings_are_errors: false
 
 env: NOT_CRAN="true"
-cran: https://mran.revolutionanalytics.com/
