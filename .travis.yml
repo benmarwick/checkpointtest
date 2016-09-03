@@ -1,44 +1,6 @@
-## Sample .travis.yml file for use with metacran/r-builder
-## See https://github.com/metacran/r-builder for details.
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
-{
-  "language": "c",
-  "sudo": false,
-  "addons": {
-    "apt": {
-      "sources": [
-        "r-packages-precise"
-      ],
-      "packages": [
-        "r-base-dev",
-        "r-recommended"
-      ]
-    }
-  },
-  "cache": {
-    "directories": "$R_LIBS_USER"
-  },
-  "before_script": [
-    "mkdir -p \"$R_LIBS_USER\"",
-    "git config --global user.email \"benmarwick@gmail.com\"",
-    "git config --global user.name \"benmarwick\"",
-    "wget -q -O - https://github.com/yihui/crandalf/raw/master/inst/scripts/install-pandoc | bash",
-    "Rscript -e 'if (length(find.package(\"devtools\", quiet = TRUE)) == 0L) { install.packages(\"devtools\", repos = \"https://mran.revolutionanalytics.com/snapshot/2016-09-02\") }'",
-    "Rscript -e 'devtools::update_packages(\"devtools\", repos = \"https://mran.revolutionanalytics.com/snapshot/2016-09-02\")'",
-    "Rscript -e 'devtools::install_deps(repos = \"https://mran.revolutionanalytics.com/snapshot/2016-09-02\", dependencies = TRUE)'",
-    "cd ..; rm -f *.tar.gz; R CMD build $R_PKG",
-    "R CMD INSTALL ${R_PKG}_*.tar.gz"
-  ],
- "script": [
-    "./pkg-build.sh run_tests"
-  ],
-  "after_failure": [
-    "./pkg-build.sh dump_logs"
-  ],
-  "group": "stable",
-  "dist": "precise",
-  "os": "linux"
-}
-
-
-
+language: R
+sudo: false
+cache: packages
+warnings_are_errors: false
