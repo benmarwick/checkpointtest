@@ -10,7 +10,7 @@ opts_chunk$set(echo = TRUE,
                warning = FALSE)
 ```
 
-```{r checkpointsetup}
+```{r checkpointsetup, eval = FALSE}
 # This will scan the Rmd file to identify the packages used within, and 
 # get the source of the package and store it locally. In order to knit this doc, I had to install.packages("rmarkdown", repos = "https://cran.revolutionanalytics.com")
 library(checkpoint)
@@ -39,3 +39,22 @@ getOption("repos")
 # check pkgs
 installed.packages()[, "Package"]
 ```
+
+What have we learned:
+
+- travis doesn't care about these, it will contact CRAN regardless of what's in these dirs:
+
+env:
+  global:
+  - R_LIBS_USER=~/vignettes/packages/.checkpoint/2016-09-02/lib/x86_64-w64-mingw32/3.3.1
+  - R_LIBS_SITE=~/vignettes/packages/.checkpoint/2016-09-02/lib/x86_64-w64-mingw32/3.3.1
+  
+- travis can't work with 
+
+cran: https://mran.revolutionanalytics.com/snapshot/2016-09-02
+
+or 
+
+repos:
+  cran: https://mran.revolutionanalytics.com/snapshot/2016-09-02
+
