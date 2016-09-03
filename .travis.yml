@@ -11,6 +11,7 @@ before_install:
 
 install:
   - echo 'options(repos = c(CRAN=\"https://mran.revolutionanalytics.com/snapshot/2016-09-02\")' > .Rprofile
+  - Rscript -e 'if(!\"devtools\" %in% rownames(installed.packages())) { install.packages(\"devtools\", dependencies = TRUE, repos = "~/vignettes/packages/.checkpoint/2016-09-02/lib/x86_64-w64-mingw32/3.3.1") }'
   - Rscript -e 'devtools::install_deps(pkg = \".\", dependencies = TRUE, repos = "~/vignettes/packages/.checkpoint/2016-09-02/lib/x86_64-w64-mingw32/3.3.1")'
 
 
@@ -25,10 +26,5 @@ notifications:
     on_success: change
     on_failure: change
 
-env:
-  matrix:
-    - RVERSION=oldrel
-    - RVERSION=release
-    - RVERSION=devel
 
 
