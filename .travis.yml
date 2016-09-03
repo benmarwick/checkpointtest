@@ -4,7 +4,7 @@ language: R
 sudo: false
 cache: packages
 repos:
-  CRAN: https://mran.revolutionanalytics.com/snapshot/2016-09-02
+  https://mran.revolutionanalytics.com/snapshot/2016-09-02
 env:
   global:
   - R_LIBS_USER=~/vignettes/packages/.checkpoint/2016-09-02/lib/x86_64-w64-mingw32/3.3.1
