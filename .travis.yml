@@ -3,6 +3,8 @@
 language: R
 sudo: false
 cache: packages
+repos:
+  CRAN: https://mran.revolutionanalytics.com/snapshot/2016-09-02
 env:
   global:
   - CRAN: https://mran.revolutionanalytics.com/snapshot/2016-09-02
