@@ -1,3 +1,38 @@
+## Sample .travis.yml file for use with metacran/r-builder
+## See https://github.com/metacran/r-builder for details.
+
+language: c
+sudo: required
+
+before_install:
+  - curl -OL https://raw.githubusercontent.com/metacran/r-builder/master/pkg-build.sh
+  - chmod 755 pkg-build.sh
+  - ./pkg-build.sh bootstrap
+
+install:
+  - echo 'options(repos = c(CRAN=\"https://mran.revolutionanalytics.com/snapshot/2016-09-02\")' > .Rprofile
+  - Rscript -e 'devtools::install_deps(pkg = \".\", dependencies = TRUE, repos = "~/vignettes/packages/.checkpoint/2016-09-02/lib/x86_64-w64-mingw32/3.3.1")'
+
+
+script:
+  - ./pkg-build.sh run_tests
+
+after_failure:
+  - ./pkg-build.sh dump_logs
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
+
+env:
+  matrix:
+    - RVERSION=oldrel
+    - RVERSION=release
+    - RVERSION=devel
+
+
+
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
 language: R

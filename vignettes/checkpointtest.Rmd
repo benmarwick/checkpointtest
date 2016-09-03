@@ -57,4 +57,14 @@ or
 
 repos:
   cran: https://mran.revolutionanalytics.com/snapshot/2016-09-02
+  
+or 
+
+env:
+  global:
+  - CRAN: https://mran.revolutionanalytics.com/snapshot/2016-09-02
+  - R_LIBS_USER=~/vignettes/packages/.checkpoint/2016-09-02/lib/x86_64-w64-mingw32/3.3.1
+  - R_LIBS_SITE=~/vignettes/packages/.checkpoint/2016-09-02/lib/x86_64-w64-mingw32/3.3.1
+  - R_PROFILE=~/.Rprofile
+
 
