@@ -5,4 +5,6 @@ sudo: false
 cache: packages
 warnings_are_errors: false
 
-env: NOT_CRAN="true"
+env:
+ NOT_CRAN="true"
+ R_PROFILE=~/.Rprofile
