@@ -4,9 +4,6 @@ language: R
 sudo: false
 cache: packages
 warnings_are_errors: false
-
-env:
- NOT_CRAN="true"
- R_PROFILE=~/.Rprofile
- R_LIBS_USER=~/vignettes/packages/.checkpoint/2016-09-02/
- R_LIBS_SITE=~/vignettes/packages/.checkpoint/2016-09-02/
+r_binary_packages: checkpoint
+install:
+ - R -e "checkpoint::checkpoint(2016-09-02)"
