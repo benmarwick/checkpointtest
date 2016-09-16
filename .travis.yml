@@ -4,6 +4,7 @@ language: R
 sudo: false
 cache: packages
 warnings_are_errors: false
-r_binary_packages: checkpoint
+r_packages:
+  - checkpoint
 install:
  - R -e "checkpoint::checkpoint(2016-09-02)"
