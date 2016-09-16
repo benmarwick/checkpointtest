@@ -5,6 +5,9 @@ sudo: false
 cache: packages
 warnings_are_errors: false
 
+r_github_packages:
+ - benmarwick/checkpointtest
+
 install:
  - mkdir $HOME/.checkpoint
  - R -e "install.packages(c('checkpoint', 'devtools', 'rmarkdown', 'knitr', 'testthat'), repos = 'https://cran.rstudio.com'); library(knitr); checkpoint::checkpoint('2015-01-10',  auto.install.knitr = TRUE, use.knitr = TRUE)"
