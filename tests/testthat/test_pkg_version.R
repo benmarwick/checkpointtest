@@ -1,3 +1,8 @@
 context("test that we have the right package version")
 
-test_that(packageVersion("MASS") == "7.3.35")
+library(checkpointtest)
+
+test_that("test that we have the right package version", {
+  expect_equal(packageVersion("MASS"),
+               package_version("7.3.35"))
+})
