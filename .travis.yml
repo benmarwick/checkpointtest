@@ -6,6 +6,6 @@ cache: packages
 warnings_are_errors: false
 
 install:
- - mkdir -R $HOME/.checkpoint
+ - mkdir $HOME/.checkpoint
  - R -e "install.packages('checkpoint', repos = 'https://cran.rstudio.com')"
  - R -e "checkpoint::checkpoint('2016-09-02')"
