@@ -10,6 +10,8 @@ opts_chunk$set(echo = TRUE,
                warning = FALSE)
 ```
 
+We choose a checkpoint date for an earlier version of MASS than the current version (‘7.3.45’). Then we have a package test that checks to see if the version of MASS used here is the earlier version and not the current version.
+
 ```{r checkpointsetup, eval = FALSE}
 # This will scan the Rmd file to identify the packages used within, and 
 # get the source of the package and store it locally. In order to knit this doc, I had to install.packages("rmarkdown", repos = "https://cran.revolutionanalytics.com")
