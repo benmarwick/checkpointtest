@@ -7,4 +7,4 @@ warnings_are_errors: false
 
 install:
  - mkdir $HOME/.checkpoint
- - R -e "install.packages(c('checkpoint', 'devtools', 'rmarkdown', 'knitr'), repos = 'https://cran.rstudio.com'); checkpoint::checkpoint('2016-09-02',  use.knitr = TRUE)"
+ - R -e "install.packages(c('checkpoint', 'devtools', 'rmarkdown', 'knitr'), repos = 'https://cran.rstudio.com'); checkpoint::checkpoint("2015-01-10",  auto.install.knitr = TRUE, use.knitr = TRUE")"

@@ -14,8 +14,10 @@ opts_chunk$set(echo = TRUE,
 # This will scan the Rmd file to identify the packages used within, and 
 # get the source of the package and store it locally. In order to knit this doc, I had to install.packages("rmarkdown", repos = "https://cran.revolutionanalytics.com")
 library(checkpoint)
-checkpoint("2016-09-02", 
-           checkpointLocation = paste0(getwd(), "/packages"))
+checkpoint("2015-01-10", 
+           auto.install.knitr = TRUE,
+           use.knitr = TRUE, 
+           checkpointLocation = "../packages")
 ```
 
 ```{r dothings}
@@ -33,33 +35,10 @@ getOption("repos")
 .libPaths()
 # check pkgs
 installed.packages()[, "Package"]
+# version of MASS, current is ‘7.3.45’, this should be earlier. 
+packageVersion("MASS")
 ```
 
-What have we learned:
 
-- travis doesn't care about these, it will contact CRAN regardless of what's in these dirs:
-
-env:
-  global:
-  - R_LIBS_USER=~/vignettes/packages/.checkpoint/2016-09-02/lib/x86_64-w64-mingw32/3.3.1
-  - R_LIBS_SITE=~/vignettes/packages/.checkpoint/2016-09-02/lib/x86_64-w64-mingw32/3.3.1
-  
-- travis can't work with 
-
-cran: https://mran.revolutionanalytics.com/snapshot/2016-09-02
-
-or 
-
-repos:
-  cran: https://mran.revolutionanalytics.com/snapshot/2016-09-02
-  
-or 
-
-env:
-  global:
-  - CRAN: https://mran.revolutionanalytics.com/snapshot/2016-09-02
-  - R_LIBS_USER=~/vignettes/packages/.checkpoint/2016-09-02/lib/x86_64-w64-mingw32/3.3.1
-  - R_LIBS_SITE=~/vignettes/packages/.checkpoint/2016-09-02/lib/x86_64-w64-mingw32/3.3.1
-  - R_PROFILE=~/.Rprofile
 
 
