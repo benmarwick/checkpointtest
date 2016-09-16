@@ -6,4 +6,4 @@ cache: packages
 warnings_are_errors: false
 install:
  - mkdir $HOME/.checkpoint
- - R -e "install.packages(c('devtools', 'checkpoint', 'rmarkdown', 'knitr', 'testthat'), repos = c(CRAN = 'cran.revolutionanalytics.com'))'); devtools::install_github('benmarwick/checkpointtest'); library(knitr); checkpoint::checkpoint('2015-01-10',  auto.install.knitr = TRUE, use.knitr = TRUE)"
+ - R -e "install.packages(c('devtools', 'checkpoint', 'rmarkdown', 'knitr', 'testthat'), repos = c(CRAN = 'cran.revolutionanalytics.com')); devtools::install_github('benmarwick/checkpointtest'); library(knitr); checkpoint::checkpoint('2015-01-10',  auto.install.knitr = TRUE, use.knitr = TRUE)"
