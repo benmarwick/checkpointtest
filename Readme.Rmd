@@ -1,0 +1,1 @@
+[![Travis-CI Build Status](https://travis-ci.org/benmarwick/checkpointtest.png?branch=master)](https://travis-ci.org/benmarwick/checkpointtest)
