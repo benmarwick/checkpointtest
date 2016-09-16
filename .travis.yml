@@ -4,7 +4,7 @@ language: R
 sudo: false
 cache: packages
 warnings_are_errors: false
-r_packages:
-  - checkpoint
+
 install:
+ - R -e "install.packages('checkpoint', repos = 'https://cran.rstudio.com'
  - R -e "checkpoint::checkpoint(2016-09-02)"
