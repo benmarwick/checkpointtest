@@ -10,4 +10,4 @@ repos:
   
 install:
  - mkdir $HOME/.checkpoint
- - R -e "install.packages(c('devtools', 'checkpoint', 'rmarkdown', 'knitr', 'testthat'), repos = 'http://cran.revolutionanalytics.com'); devtools::install_github('benmarwick/checkpointtest'); library(knitr); checkpoint::checkpoint('2015-01-10',  auto.install.knitr = TRUE, use.knitr = TRUE)"
+ - R -e "install.packages(c('devtools', 'checkpoint', 'rmarkdown', 'knitr', 'testthat'), repos = '$MRAN'); devtools::install_github('benmarwick/checkpointtest'); library(knitr); checkpoint::checkpoint('2015-01-10',  auto.install.knitr = TRUE, use.knitr = TRUE)"
